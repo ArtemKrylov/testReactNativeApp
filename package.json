@@ -20,6 +20,7 @@
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^13.5.0",
     "react-native": "0.72.6",
     "react-native-dotenv": "^3.4.9",
     "react-native-gesture-handler": "~2.12.0",
@@ -31,10 +32,16 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
+    "babel-plugin-react-native-classname-to-style": "^1.2.2",
+    "babel-plugin-react-native-platform-specific-extensions": "^1.1.1",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "prettier": "2.8.8"
+    "prettier": "2.8.8",
+    "react-native-css-transformer": "^1.2.4",
+    "react-native-paper": "^5.11.2",
+    "react-native-sass-transformer": "^2.0.0",
+    "sass": "^1.69.5"
   },
   "resolutions": {
     "metro": "^0.73.7",
