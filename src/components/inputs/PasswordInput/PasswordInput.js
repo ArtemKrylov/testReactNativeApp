@@ -1,51 +1,53 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState} from "react";
 
-import OpenedEyeImg from '../../../assets/icons/openEye.png';
-import ClosedEyeImg from '../../../assets/icons/openEye.png';
-import ImageButton from '../../buttons/ImageButton/ImageButton';
+import ImageButton from "../../buttons/ImageButton/ImageButton";
+import OpenedEyeImg from "../../../assets/icons/openEye.png";
+import {View} from "react-native";
+import ClosedEyeImg from "../../../assets/icons/openEye.png";
+import {Text} from "react-native";
+import {TextInput} from "react-native";
 
 const PasswordInput = ({value, setValue, label}) => {
   const [hide, setHide] = useState(true);
   const inputRef = useRef();
 
-  console.log('OpenedEyeImg :', OpenedEyeImg);
-  console.log('ClosedEyeImg :', ClosedEyeImg);
-
   function onToggleShowPasswordBtnClick() {
-    setHide((hide) => !hide);
+    setHide(hide => !hide);
   }
 
   return (
-    <div
+    <View
       className="login_input_container"
       onClick={() => {
         inputRef.current.focus();
       }}
     >
-      <label>{label}</label>
-      <input
-        value={value || ''}
-        onChange={(e) => {
-          if (e.target.value.length === 0) {
-            inputRef.current.setAttribute('readonly', true);
+      <Text>{label}</Text>
+      <TextInput
+        value={value || ""}
+        onChangeText={value => {
+          console.log("value :", value);
+          if (value.length === 0) {
+            // inputRef.current.setAttribute("readonly", true);
             setTimeout(() => {
-              inputRef.current.removeAttribute('readonly');
+              // inputRef.current.removeAttribute("readonly");
             }, 100);
           }
-          setValue(e.target.value);
+          setValue(value);
         }}
-        name={'password'}
-        type={hide ? 'password' : 'text'}
+        name={"password"}
+        type={hide ? "password" : "text"}
         autoComplete="new-password-erp"
         ref={inputRef}
+        placeholder="Enter your password"
       />
-      <div className="hidden"></div>
+      {/* <div className="hidden"></div> */}
       {/* <ImageButton
         src={hide ? ClosedEyeImg : OpenedEyeImg}
-        className={'showPaswBtn'}
+        className={"showPaswBtn"}
         onClick={onToggleShowPasswordBtnClick}
       /> */}
-    </div>
+    </View>
   );
 };
 

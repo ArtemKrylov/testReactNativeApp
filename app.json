@@ -1,6 +1,6 @@
 {
   "expo": {
-    "scheme": "acme",
+    "scheme": "ERPBa3a",
     "web": {
       "bundler": "metro"
     },
@@ -10,6 +10,22 @@
     "packagerOpts": {
       "config": "metro.config.js",
       "sourceExts": ["js", "jsx", "css", "scss"]
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "9b41d9bb-06b6-4a0f-9fa8-90117c2dbafe"
+      }
+    },
+    "android": {
+      "package": "com.artemkdev.testReactNativeApp",
+      "config": {
+        "extra": {
+          "HermesInternal": "disable"
+        }
+      }
     }
   }
 }

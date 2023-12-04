@@ -1,10 +1,11 @@
 {
-  "singleQuote": true,
+  "singleQuote": false,
   "bracketSpacing": false,
-  "arrowParens": "always",
+  "arrowParens": "avoid",
   "printWidth": 120,
   "jsxBracketSameLine": false,
-  "singleAttributePerLine": true,
+  "singleAttributePerLine": false,
+  "trailingComma": "all",
   "overrides": [
     {
       "files": "*.scss",
@@ -12,6 +13,5 @@
         "singleQuote": false
       }
     }
-  ],
-  "quoteProps": "preserve"
+  ]
 }

@@ -1,14 +1,14 @@
-import React from 'react';
-import {useTranslation} from 'react-i18next';
-import {Button} from 'react-native';
-import PropTypes from 'prop-types';
+import React from "react";
+import {useTranslation} from "react-i18next";
+import {Button} from "react-native";
+import PropTypes from "prop-types";
 
 // import ToolTip from "../ToolTip";
-import {BUTTON_COLORS, BUTTON_TYPES} from '../../../constants/buttons';
+import {BUTTON_COLORS, BUTTON_TYPES} from "../../../constants/buttons";
 
 const FunctionButton = ({
   name,
-  className = '',
+  className = "",
   color = BUTTON_COLORS.BLUE,
   type = BUTTON_TYPES.BUTTON,
   autoWidth,
@@ -18,7 +18,7 @@ const FunctionButton = ({
   style = {},
   disabled,
 }) => {
-  const buttonClassName = `fixed_button fixed_button__${color} ${className} ${autoWidth ? 'autoWidth' : ''}`;
+  const buttonClassName = `fixed_button fixed_button__${color} ${className} ${autoWidth ? "autoWidth" : ""}`;
 
   const {t} = useTranslation();
 
@@ -26,7 +26,7 @@ const FunctionButton = ({
     <Button
       className={buttonClassName}
       onPress={onClick}
-      title={typeof name === 'string' ? t(name) : name}
+      title={typeof name === "string" ? t(name) : name}
       disabled={disabled}
       // type={type}
       // style={width ? {width: width} : {...style}}

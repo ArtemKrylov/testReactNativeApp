@@ -1,38 +1,41 @@
-import React, {useRef} from 'react';
+import React, {useRef} from "react";
+import {Text, TextInput, View} from "react-native";
 
 const LoginInput = ({value, setValue, label}) => {
   const inputRef = useRef();
   return (
-    <div
+    <View
       className="login_input_container"
       onClick={() => {
         inputRef.current.focus();
       }}
     >
-      <label>{label}</label>
-      <input
-        value={value || ''}
-        onChange={(e) => {
-          if (e.target.value.length === 0) {
-            inputRef.current.setAttribute('readonly', true);
+      <Text>{label}</Text>
+      <TextInput
+        value={value || ""}
+        onChangeText={value => {
+          console.log("value :", value);
+          if (value.length === 0) {
+            // inputRef.current.setAttribute("readonly", true);
             setTimeout(() => {
-              inputRef.current.removeAttribute('readonly');
+              // inputRef.current.removeAttribute("readonly");
             }, 100);
           }
-          setValue(e.target.value);
+          setValue(value);
         }}
-        type="text"
-        readOnly={true}
+        type="password"
+        // readOnly={true}
         ref={inputRef}
-        onFocus={() => {
-          inputRef.current.removeAttribute('readonly');
-        }}
-        onBlur={() => {
-          inputRef.current.setAttribute('readonly', true);
-        }}
+        // onFocus={() => {
+        //   inputRef.current.removeAttribute('readonly');
+        // }}
+        // onBlur={() => {
+        //   inputRef.current.setAttribute('readonly', true);
+        // }}
+        placeholder="Enter your email"
       />
-      <div className="hidden"></div>
-    </div>
+      {/* <div className="hidden"></div> */}
+    </View>
   );
 };
 
